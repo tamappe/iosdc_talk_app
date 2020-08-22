@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'iOSDC 2020 App',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -61,9 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 20),
-                  child: Text(
-                    '1'
-                  ),
+                  child: Text('1'),
                 )
               ],
             ),
@@ -80,12 +77,12 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class NumberButton extends StatelessWidget {
-  int number;
+  final int number;
 
   NumberButton(this.number);
+
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('$number'));
+    return Center(child: FlatButton(child: Text('$number')));
   }
 }
-
