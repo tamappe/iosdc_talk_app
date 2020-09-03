@@ -39,10 +39,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var list = <Widget>[];
+    var buttons = <Widget>[];
     for (var i = 1; i <= 25; i++) {
-      var widget = Center(child: Text('$i'));
-      list.add(widget);
+      var widget = Center(
+        child: Container(
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.blue),
+            borderRadius: BorderRadius.circular(25),
+          ),
+          child: Container(child: Center(child: Text("$i"))),
+        ),
+      );
+      buttons.add(widget);
     }
     return Scaffold(
       appBar: AppBar(
@@ -64,11 +74,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               ],
             ),
+
             GridView.count(
               shrinkWrap: true,
               crossAxisCount: 5,
-              children: list,
+              children: buttons,
             )
+
           ],
         ),
       ),
